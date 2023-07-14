@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../public/style/index.css';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -22,4 +21,5 @@ root.render(
     </Routes>
   </BrowserRouter>,
 );
+
 reportWebVitals();
