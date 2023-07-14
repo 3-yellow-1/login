@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 // Login 컴포넌트 선언
 const Login = () => {
   // 상태 변수 선언
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState(''); //동적인 값을 상태(state) 
+                                                //첫번째 원소는 현재 상태, 두번째 원소는 Setter 함수 = 상태의 기본값을 파라미터로 넣어서 호출
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
@@ -25,7 +26,7 @@ const Login = () => {
     
     try {
       // axios를 사용하여 서버로 POST 요청 보냄
-      const response = await axios.post('https://devawsback.gongsacok.com/pub/login', {
+      const response = await axios.post('https://devawsback.gongsacok.com/pub/login', { //await 키워드는 async 함수 안에서만 사용
         userid: username,
         passwd: password
       });
