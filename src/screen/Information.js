@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import HandleLogout from '../services/HandleLogout';
 
 // Profile 컴포넌트 선언
-const Profile = () => {
+const Information = () => {
 
     // 상태 변수 선언
     const [userid, setUserId] = useState(''); // userid 상태 변수
@@ -17,15 +17,17 @@ const Profile = () => {
     const jtoken = localStorage.getItem('jtoken');
     const userid = localStorage.getItem('userid'); //브라우저의 로컬 저장소에서 'userid' 키와 연결된 값을 검색하는 데 사용되는 메서드 호출.
 
+    console.log(userid);
     // userid를 문자열로 변환하여 상태 변수에 저장
     const parsedUserId = JSON.stringify(userid); //JSON.stringify()는 JavaScript 객체를 JSON 문자열 표현으로 변환하는 데 사용.
+    console.log(parsedUserId);
     setUserId(parsedUserId);
   
   }, [navigate]);
 
   // JSX 반환
   return (
-    <div className="profile">
+    <div className="Information">
       <h2>프로필</h2>
       <div className='contentWrap'>
           <label className='inputTitle'>아이디</label>
@@ -38,4 +40,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Information;

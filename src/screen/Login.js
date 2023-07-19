@@ -36,7 +36,7 @@ const Login = () => {
 
       // jtoken과 userid를 로컬 스토리지에 저장
       localStorage.setItem('jtoken', jtoken);
-      localStorage.setItem('userid', JSON.stringify(userid));
+      localStorage.setItem('userid', userid);
 
       console.log(response.data.data);
 
