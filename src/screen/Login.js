@@ -26,28 +26,21 @@ const Login = () => {
     
     try {
       // axios를 사용하여 서버로 POST 요청 보냄
-      const response = await axios.post('https://devawsback.gongsacok.com/pub/login', { //await 키워드는 async 함수 안에서만 사용
+      const response = await axios.post('https://devawsback.gongsacok.com/pub/login', { //await 키워드는 async 함수 안에서만 사용.
         userid: username,
         passwd: password
       });
-
       // 응답 데이터에서 jtoken과 userid 추출
       const { jtoken, userid } = response.data.data;
-
       // jtoken과 userid를 로컬 스토리지에 저장
       localStorage.setItem('jtoken', jtoken);
       localStorage.setItem('userid', userid);
-
       console.log(response.data.data);
-
       // 입력한 아이디와 응답으로 받은 userid 비교하여 페이지 이동
       if (username === userid) {
-       
-        navigate('/Profile');
-
+        navigate('/Information');
       } else {
         console.log('Invalid credentials');
-        
       }
 
     } catch (error) {

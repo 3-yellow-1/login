@@ -1,6 +1,7 @@
 const HandleLogout = (navigate) => {
-    localStorage.removeItem('jtoken');
-    localStorage.removeItem('userid');
+    localStorage.clear();
+    // localStorage.removeItem('jtoken');
+    // localStorage.removeItem('userid');
     navigate('/Login');
   };
   
