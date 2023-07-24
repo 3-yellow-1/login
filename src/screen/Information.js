@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useHistory } from 'react-router-dom';
 import HandleLogout from '../services/HandleLogout';
 
 // Profile 컴포넌트 선언
@@ -10,6 +10,8 @@ const Information = () => {
 
     // 네비게이션 객체 가져오기
     const navigate = useNavigate();
+
+    const history = useHistory();
 
   useEffect(() => {
 
@@ -24,10 +26,16 @@ const Information = () => {
     setUserId(parsedUserId);
   
   }, [navigate]);
+  
+  function handleUseHistory() {
+    history.back();
+  }
 
   // JSX 반환
   return (
     <div className="Information">
+      <div className="InformationWrap">
+      <button onClick={ handleUseHistory }>닫기</button>
       <h2>프로필</h2>
       <div className='contentWrap'>
           <label className='inputTitle'>아이디</label>
@@ -35,6 +43,7 @@ const Information = () => {
             <p>{userid}</p>
           </div>
           <button className='bottomButton' type="submit" onClick={() => HandleLogout(navigate)}>로그아웃</button>
+      </div>
       </div>
     </div>
   );

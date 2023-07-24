@@ -38,7 +38,7 @@ const Login = () => {
       console.log(response.data.data);
       // 입력한 아이디와 응답으로 받은 userid 비교하여 페이지 이동
       if (username === userid) {
-        navigate('/Information');
+        navigate('/UserList');
       } else {
         console.log('Invalid credentials');
       }
@@ -51,6 +51,7 @@ const Login = () => {
   // JSX 반환
   return (
     <div className='Login'>
+      <div className='LoginWrap'>
       <h2>로그인</h2>
       <form className="contentWrap" onSubmit={handleSubmit}>
         <div>
@@ -62,11 +63,12 @@ const Login = () => {
         <div style={{marginTop: "30px"}}>
           <label className='inputTitle'>비밀번호</label>
           <div className='inputWrap'>
-            <input className='input' type="password" value={password} onChange={handlePasswordChange} />
+            <input className='input' type="password" maxlength='10' value={password} onChange={handlePasswordChange} />
           </div>
             <button className='bottomButton' type="submit">확인</button>
         </div>     
       </form>
+      </div>
     </div>
   );
 };
