@@ -1,6 +1,6 @@
 
-const handleBackPage = (navigate) => {
+const HandleBackPage = (navigate) => {
     navigate('/UserList');
 };
 
-export default handleBackPage;
+export default HandleBackPage;

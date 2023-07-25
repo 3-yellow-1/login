@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Main() {
-
+    localStorage.clear();
     const navigate = useNavigate();
 
     const handleLoginPageChange = () => {
@@ -16,7 +16,10 @@ return (
               React study
             </h2>
            <div>
-                <button className='loginButton' type="button" onClick={handleLoginPageChange}>로그인</button>
+                <button className='loginButton' 
+                        type="button" 
+                        onClick={handleLoginPageChange}>로그인
+                </button>
             </div>
         </div>
     </div>
@@ -24,5 +27,3 @@ return (
 };
 
 export default Main;
-
-
