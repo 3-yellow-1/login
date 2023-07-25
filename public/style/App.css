@@ -131,15 +131,23 @@
     background: #e2e0e0;
   }
 
-  .InformationButton{
-    width: 60px;
-    height: 60px;
+  .InformationButton, .BackButton{
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background:  #9e30f4;
     color: #fff;
     position: absolute;
-    right: 100px;
-    top: 50px;
     border: 3px solid #fff;
     font-weight: 600;
+  }
+
+  .InformationButton{
+    right: 100px;
+    top: 50px;
+  }
+
+  .BackButton{
+    left: 30px;
+    top: 30px;
   }
