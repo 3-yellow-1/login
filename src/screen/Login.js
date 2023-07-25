@@ -26,7 +26,7 @@ const Login = () => {
       }
     )
 
-    .then((response) => {
+    .then((response) => { 
       // 응답 데이터에서 jtoken과 userid 추출
       const { jtoken, userid } = response.data.data;
       // jtoken과 userid를 로컬 스토리지에 저장
@@ -39,6 +39,7 @@ const Login = () => {
         console.log('아이디와 비밀번호가 일치하지 않습니다.');
       }
     })
+    
     .catch((error) => { 
       if (error.response) { //`error` 객체에 `response` 속성이 있는지 확인.
         if (error.response.status === 401) { // response.status 401 오류 알 경우. 401 오류 =  401(권한 없음)
