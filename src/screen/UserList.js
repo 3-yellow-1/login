@@ -2,11 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import UseTokenCheck from '../services/UseTokenCheck';
 
-
 const UserList = () => {
-    
     UseTokenCheck();
-
     const navigate = useNavigate();
     const handleInformationPageChange = () => {
         navigate('/Information',{replace:true});
@@ -23,7 +20,7 @@ const UserList = () => {
                 </button>
             </div>
             <div className='tableBox'>
-  
+
             </div>
         </div>
         );

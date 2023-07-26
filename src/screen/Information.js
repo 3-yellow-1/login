@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import HandleLogout from '../services/HandleLogout';
-import HandleBackPage from '../services/HandleBackPage';
 import UseTokenCheck from '../services/UseTokenCheck';
+import { HandleBackPage, HandleLogout } from '../services/Handle';
 
 const Information = () => {
     UseTokenCheck();
-    
+
     const [userid, setUserId] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
-
     const jtoken = localStorage.getItem('jtoken');
     const userid = localStorage.getItem('userid'); 
-
-    // userid를 문자열로 변환하여 상태 변수에 저장
-    const parsedUserId = JSON.stringify(userid); 
-    //JSON.stringify()는 JavaScript 객체를 JSON 문자열 표현으로 변환하는 데 사용.
-    setUserId(parsedUserId);
+    setUserId(userid);
   }, [navigate]);
 
   return (

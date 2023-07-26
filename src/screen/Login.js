@@ -17,9 +17,8 @@ const Login = () => {
   };
 
   const handleSubmit = async (event) => { 
-    //인증을 위해 사용자 자격 증명(사용자 이름 및 암호)을 서버로 보냄.
     event.preventDefault();
-
+    //인증을 위해 사용자 자격 증명(사용자 이름 및 암호)을 서버로 보냄.
     axios.post('https://devawsback.gongsacok.com/pub/login', {
       userid: username,
       passwd: password
