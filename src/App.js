@@ -5,7 +5,7 @@ import Main from './screen/Main';
 import Login from './screen/Login';
 import UserList from './screen/UserList';
 import Information from './screen/Information';
-import UseTokenCheck from './services/UseTokenCheck';
+import Data from './components/Data';
 
 
 function App() {
@@ -18,8 +18,7 @@ function App() {
       <Route path="/Login" element={<Login />}/>
       <Route path="/UserList" element={<UserList />} />
       <Route path="/Information" element={<Information />} />
-      <Route path="/UseTokenCheck" element={<UseTokenCheck />} />
-
+      <Route path="/Data" element={<Data />} />
     </Routes>
 
     </div>

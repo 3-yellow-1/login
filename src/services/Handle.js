@@ -1,3 +1,17 @@
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const UseTokenCheck = () => {
+  const navigate = useNavigate();
+  useEffect(() => { 
+    const storedJtoken = localStorage.getItem('jtoken');
+    if (!!storedJtoken) {
+
+    } else { 
+      navigate('/Login', { replace: true });
+    }
+  }, []);
+};
 
 const HandleBackPage = (navigate) => {
     navigate('/UserList');
@@ -5,8 +19,7 @@ const HandleBackPage = (navigate) => {
 
 const HandleLogout = (navigate) => {
     localStorage.clear();
-    // localStorage.removeItem('jtoken');
-    // localStorage.removeItem('userid');
     navigate('/Login');
 };
   
+export { HandleBackPage, HandleLogout, UseTokenCheck };

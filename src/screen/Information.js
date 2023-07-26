@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import UseTokenCheck from '../services/UseTokenCheck';
-import { HandleBackPage, HandleLogout } from '../services/Handle';
+
+import { HandleBackPage, HandleLogout, UseTokenCheck } from '../services/Handle.js';
 
 const Information = () => {
     UseTokenCheck();
@@ -10,7 +10,7 @@ const Information = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-    const jtoken = localStorage.getItem('jtoken');
+
     const userid = localStorage.getItem('userid'); 
     setUserId(userid);
   }, [navigate]);
