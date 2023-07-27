@@ -9,6 +9,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleUsernameChange = (event) => {
+    // event가  파라미터로 온다.
     setUsername(event.target.value);
   };
 
@@ -31,7 +32,7 @@ const Login = () => {
       // jtoken과 userid를 로컬 스토리지에 저장
       localStorage.setItem('jtoken', jtoken);
       localStorage.setItem('userid', userid);
-      console.log(response.data.data);
+      // console.log(response.data.data);
       if (username === userid) {
         navigate('/UserList');
       } else {

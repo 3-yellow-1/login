@@ -170,3 +170,22 @@ body {
 .Data {
   padding: 30px;
 }
+
+.UseIdSearchButton{
+  width: 90%;
+  height: 48px;
+  border: none;
+  font-weight: 700;
+  background-color: #9e30f4;
+  border-radius: 64px;
+  color: #fff;
+  margin: 36px 0;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+}
+
+.UseIdSearchButton:disabled{
+  background-color: #dadada;
+  color: #fff;
+}
