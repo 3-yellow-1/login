@@ -171,8 +171,8 @@ body {
   padding: 30px;
 }
 
-.UseIdSearchButton{
-  width: 90%;
+.UseIdSearchButton, .DataChangeButton{
+  width: 100%;
   height: 48px;
   border: none;
   font-weight: 700;
@@ -181,11 +181,36 @@ body {
   color: #fff;
   margin: 36px 0;
   cursor: pointer;
-  position: absolute;
-  bottom: 0;
+ 
 }
 
-.UseIdSearchButton:disabled{
+.UseIdSearchButton:disabled, .DataChangeButton:disabled{
   background-color: #dadada;
   color: #fff;
 }
+
+.userDataBox{
+  width: 100%;
+}
+
+.inputSearch{
+  height: 48px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.inputData{
+  background: #ededed;
+  width: 100%;
+  height: 48px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.inputData::placeholder{
+  color: none;
+}
+
