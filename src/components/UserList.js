@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const UserList = () => {
-
+  
   const [listItems, setListItems] = useState([]);
+  // listItems.map()을 사용하려면 useState([]); 빈 배열로 초기화.
+
   useEffect(() => {
 
     const UserListItem = () => {
@@ -13,7 +15,7 @@ const UserList = () => {
         axios.defaults.headers.common['Authorization'] = `Bearer ${jtoken}`;
       }
       axios.post('https://devawsback.gongsacok.com/admin/listUser', {
-          offset: 0,
+          offset: 0, // 사용자 목록의 시작 오프셋
           size: 6, // 출력된 user의 갯수
         })
         .then((response) => {

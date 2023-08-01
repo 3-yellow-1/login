@@ -22,7 +22,7 @@ const User = () => {
                 </button>
                 </div>
                 <div><TabMenu tabs={['UserList', 'UserDetail']} defaultTab="UserList" /></div>
-                                    {/*  탭 메뉴의 구성 요소  */}         {/* 기본환성 탭  */}
+                                   {/*  탭 메뉴의 구성 요소  */}         {/* 기본환성 탭  */}
             </div>
         </div>
     )

@@ -41,18 +41,19 @@ const Login = () => {
     })
 
     .catch((error) => { 
-      if (error.response) { //`error` 객체에 `response` 속성이 있는지 확인.
-        if (error.response.status === 401) { // response.status 401 오류 알 경우. 401 오류 =  401(권한 없음)
-          alert('아이디 혹은 비밀번호가 잘못 입력되었습니다.');
-        } else {
-          alert('요청 처리 중 오류가 발생했습니다. 나중에 다시 시도해주세요.');
-        }
-      } else if (error.request) {
-        alert('네트워크 오류입니다. 인터넷 연결을 확인하고 다시 시도해주세요.');
-      } else {
-        console.error('Error:', error.message);
-        alert('아이디 혹은 비밀번호가 잘못 입력되었습니다.');
-      }
+      alert('아이디 혹은 비밀번호가 잘못 입력되었습니다.');
+      // if (error.response) { //`error` 객체에 `response` 속성이 있는지 확인.
+      //   if (error.response.status === 401) { // response.status 401 오류 알 경우. 401 오류 =  401(권한 없음)
+      //     alert('아이디 혹은 비밀번호가 잘못 입력되었습니다.');
+      //   } else {
+      //     alert('요청 처리 중 오류가 발생했습니다. 나중에 다시 시도해주세요.');
+      //   }
+      // } else if (error.request) {
+      //   alert('네트워크 오류입니다. 인터넷 연결을 확인하고 다시 시도해주세요.');
+      // } else {
+      //   console.error('Error:', error.message);
+      //   alert('아이디 혹은 비밀번호가 잘못 입력되었습니다.');
+      // }
     });
 };
 //------------------------------------------------------------------------------

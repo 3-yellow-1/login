@@ -184,20 +184,20 @@ li{
   padding: 30px 50px;
 }
 
-.UseIdSearchButton, .DataChangeButton{
+.UseIdSearchButton, .DataChangeButton, .UseListSearchButton{
   width: 100%;
   height: 48px;
   border: none;
   font-weight: 700;
-  background-color: #9e30f4;
+  background-color: #b68dd6;
   border-radius: 64px;
-  color: #fff;
+  color: #333;
   margin: 36px 0;
   cursor: pointer;
  
 }
 
-.UseIdSearchButton:disabled, .DataChangeButton:disabled{
+.UseIdSearchButton:disabled, .DataChangeButton:disabled, .UseListSearchButton:disabled{
   background-color: #dadada;
   color: #fff;
 }

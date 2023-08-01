@@ -5,7 +5,7 @@ import { HandleBackPage, HandleLogout, UseTokenCheck } from '../services/Handle.
 
 const Information = () => {
     UseTokenCheck();
-//------------------------------------------------------------------------------
+
     const [userid, setUserId] = useState('');
     const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ const Information = () => {
     const userid = localStorage.getItem('userid'); 
     setUserId(userid);
   }, [navigate]);
-//------------------------------------------------------------------------------
+
   return (
     <div className="Information">
       <div className="InformationWrap">
