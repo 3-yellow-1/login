@@ -3,6 +3,11 @@ body {
 	margin: 0;
 }
 
+li{
+  text-decoration: none;
+  list-style: none;
+}
+
 .Main{
   background: #9e30f4;
   height: 100vh;
@@ -160,15 +165,23 @@ body {
     left: 50%;
     top: 20vh;
     transform:  translate(-50%, 0);
-    width: 60vw;
+    width: 80vw;
     height: 60vh;
     background: #493c4d;
     color: #eee;
   }
 
+.tableBoxUl li {
+  float: left;
+  width: 50%;
+  height: 50px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+}
 
 .Data {
-  padding: 30px;
+  padding: 30px 50px;
 }
 
 .UseIdSearchButton, .DataChangeButton{
@@ -198,6 +211,7 @@ body {
   width: 100%;
   outline: none;
   border: none;
+  background: #ededed;
 }
 
 .inputData{
@@ -214,3 +228,66 @@ body {
   color: none;
 }
 
+.userWrap{
+  padding: 60px;
+}
+
+.userWrap h3{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.tab-menu {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+}
+
+.tab-buttons {
+  display: flex;
+}
+
+.tab-buttons button {
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  width: 50%;
+}
+
+.tab-buttons button.active {
+  background-color: #f2f2f2;
+}
+
+.tab-content div.hidden {
+  display: none;
+}
+
+.tab-content div.active {
+  display: block;
+  padding: 10px;
+}
+
+.userListWrap{
+  padding: 20px 30px;
+}
+
+.userListWrap table{
+  width: 100%;
+}
+
+.userListWrap thead th{
+  height: 36px;
+  font-weight: 600;
+  background-color: #d49dfd;
+}
+
+.userListWrap tbody td {
+  width: 25%;
+  height: 30px;
+  padding-bottom: 16px;
+}

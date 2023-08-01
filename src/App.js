@@ -4,11 +4,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Main from './screen/Main';
 import Login from './screen/Login';
-import UserList from './screen/UserList';
+import User from './screen/User';
+import TabMenu from './components/TabMenu';
+import UserDetail from './components/UserDetail';
 import Information from './screen/Information';
-import Data from './components/Data';
-
-
+import UserList from './components/UserList';
 
 function App() {
   return (
@@ -18,9 +18,11 @@ function App() {
     <Routes>
       <Route path="/" element={<Main />} />
       <Route path="/Login" element={<Login />}/>
-      <Route path="/UserList" element={<UserList />} />
+      <Route path="/User" element={<User />}/>
+      <Route path="/UserDetail" element={<UserDetail />} />
       <Route path="/Information" element={<Information />} />
-      <Route path="/Data" element={<Data />} />
+      <Route path="/UserList" element={<UserList />} />
+      <Route path="/TabMenu" element={<TabMenu />} />
     </Routes>
 
     </div>

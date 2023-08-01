@@ -7,7 +7,7 @@ const Login = () => {
   const [username, setUsername] = useState(''); 
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-
+//------------------------------------------------------------------------------
   const handleUsernameChange = (event) => {
     // event가  파라미터로 온다.
     setUsername(event.target.value);
@@ -16,7 +16,7 @@ const Login = () => {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-
+//------------------------------------------------------------------------------
   const handleSubmit = async (event) => { 
     event.preventDefault();
     //인증을 위해 사용자 자격 증명(사용자 이름 및 암호)을 서버로 보냄.
@@ -34,12 +34,12 @@ const Login = () => {
       localStorage.setItem('userid', userid);
       // console.log(response.data.data);
       if (username === userid) {
-        navigate('/UserList');
+        navigate('/User');
       } else {
         console.log('아이디와 비밀번호가 일치하지 않습니다.');
       }
     })
-    
+
     .catch((error) => { 
       if (error.response) { //`error` 객체에 `response` 속성이 있는지 확인.
         if (error.response.status === 401) { // response.status 401 오류 알 경우. 401 오류 =  401(권한 없음)
@@ -55,7 +55,7 @@ const Login = () => {
       }
     });
 };
-
+//------------------------------------------------------------------------------
   return (
     <div className='Login'>
       <div className='LoginWrap'>

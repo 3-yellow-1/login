@@ -2,9 +2,12 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const UseTokenCheck = () => {
+
+//------------------------------------------------------------------------------
   const navigate = useNavigate();
   useEffect(() => { 
     const storedJtoken = localStorage.getItem('jtoken');
+
     if (!!storedJtoken) {
 
     } else { 
@@ -12,11 +15,11 @@ const UseTokenCheck = () => {
     }
   }, []);
 };
-
+//------------------------------------------------------------------------------
 const HandleBackPage = (navigate) => {
-    navigate('/UserList');
+    navigate('/User');
 };
-
+//------------------------------------------------------------------------------
 const HandleLogout = (navigate) => {
     localStorage.clear();
     navigate('/Login');
