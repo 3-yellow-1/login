@@ -4,7 +4,7 @@ import axios from 'axios';
 const UserDetail = () => {
     const [useId, setUseId] = useState("");
     const [name, setName] = useState("");
-    const [mobile, setMobile] = useState("");
+    const [mobile, setMobile] = useState(""); // 사용자의 정보를 담을 상태 변수들.
 //------------------------------------------------------------------------------
     const handleUseIdSearch = (event) => {
         setUseId(event.target.value);
@@ -16,7 +16,7 @@ const UserDetail = () => {
         setMobile(event.target.value);
     } 
 //------------------------------------------------------------------------------
-    const handleUseIdSearchSubmit = (event) => {
+    const handleUseIdSearchSubmit = (event) => { // 사용자 ID로 검색 버튼 클릭 시 실행되는 함수.
         event.preventDefault();
         const jtoken = localStorage.getItem('jtoken');
         // 키-값 쌍을 사용자 브라우저에 로컬로 저장
@@ -30,7 +30,7 @@ const UserDetail = () => {
         axios.post('https://devawsback.gongsacok.com/admin/getUserDetail', {
                 ruid: useId
                 })
-           .then((response) => { 
+           .then((response) => { // 서버로부터 받은 데이터에서 이름과 휴대폰 번호를 추출하여 상태를 업데이트.
                 const ruid = response.data.data;
                 const { name, mobile } = ruid;
                 console.log(name);
@@ -43,8 +43,9 @@ const UserDetail = () => {
          });
         };
 //------------------------------------------------------------------------------
-    const handleDataChangeSubmit = (event) => {
+    const handleDataChangeSubmit = (event) => { // 사용자 정보 수정 버튼 클릭 시 실행되는 함수.
         event.preventDefault();
+        // 서버에 사용자 정보를 전달하여 업데이트.
         axios.post('https://devawsback.gongsacok.com/admin/setUserDetail', {
             ruid: useId,
             name: name,

@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { HandleBackPage, HandleLogout, UseTokenCheck } from '../services/Handle.js';
 
 const Information = () => {
-    UseTokenCheck();
+    UseTokenCheck(); // UseTokenCheck 함수를 호출하여 사용자의 로그인 여부를 확인
 
     const [userid, setUserId] = useState('');
     const navigate = useNavigate();
 
-    useEffect(() => {
+    useEffect(() => { // navigate가 변경될 때마다 useEffect가 실행됨.
 
     const userid = localStorage.getItem('userid'); 
     setUserId(userid);

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  localStorage.clear();
+  localStorage.clear(); // 로그인 화면 진입 시 로컬 스토리지를 초기화.
   const [username, setUsername] = useState(''); 
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
