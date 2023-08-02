@@ -19,7 +19,6 @@ const TabMenu = ({ tabs, defaultTab }) => {  // props로 tabs, defaultTab를 받
   return (
 
     <div className="tab-menu">
-
       <div className="tab-buttons">
         {tabs.map((tab) => ( // tabs 배열을 반복하면서 각 탭에 대한 버튼을 생성 = tabs={['UserList', 'UserDetail']}
 

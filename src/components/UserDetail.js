@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useHeaders } from "../services/useHeaders";
 
 const UserDetail = () => {
-    const authorizationToken = useHeaders();
 
     const [useId, setUseId] = useState("");
     const [name, setName] = useState("");
@@ -21,7 +19,15 @@ const UserDetail = () => {
 //------------------------------------------------------------------------------
     const handleUseIdSearchSubmit = (event) => { // 사용자 ID로 검색 버튼 클릭 시 실행되는 함수.
         event.preventDefault(); 
-        axios.defaults.headers.common['Authorization'] = authorizationToken;
+        const jtoken = localStorage.getItem('jtoken');
+        // 키-값 쌍을 사용자 브라우저에 로컬로 저장
+        if (jtoken) {
+            axios.defaults.headers.common['Authorization'] = `Bearer ${jtoken}`;
+            // axios.defaults = Axios에 대한 기본 구성을 보유하는 개체?
+            // axios.defaults.headers = 기본 헤더를 보유하는 객체
+            // Authorization = HTTP 요청에서 자격 증명을 전달하는 표준 방법
+            // 이 시점 이후에 이루어진 모든 Axios 요청의 Authorization 헤더에 포함
+          }
         axios.post('https://devawsback.gongsacok.com/admin/getUserDetail', {
                 ruid: useId
                 })
@@ -41,7 +47,11 @@ const UserDetail = () => {
 //------------------------------------------------------------------------------
     const handleDataChangeSubmit = (event) => { // 사용자 정보 수정 버튼 클릭 시 실행되는 함수.
         event.preventDefault();
-        axios.defaults.headers.common['Authorization'] = authorizationToken;
+
+        const jtoken = localStorage.getItem('jtoken');
+        if (jtoken) {
+            axios.defaults.headers.common['Authorization'] = `Bearer ${jtoken}`;
+          }
         // 서버에 사용자 정보를 전달하여 업데이트.
         axios.post('https://devawsback.gongsacok.com/admin/setUserDetail', {
             ruid: useId,

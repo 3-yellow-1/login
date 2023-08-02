@@ -1,5 +1,5 @@
 import React from "react";
-import TabMenu from '../components/TabMenu';
+import UserList from '../components/UserList';
 import { useNavigate } from 'react-router-dom';
 
 const User = () => {
@@ -24,8 +24,7 @@ const User = () => {
                     </button>
                 </div>
                 <div>
-                    <TabMenu tabs={['UserList', 'UserDetail']} defaultTab="UserList" />
-                                   {/*  탭 메뉴의 구성 요소  */}         {/* 기본환성 탭  */}
+                     <UserList />
                 </div>
             </div>
         </div>
