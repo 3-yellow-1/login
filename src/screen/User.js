@@ -17,14 +17,16 @@ const User = () => {
             <div className="userWrap">
                 <div><h3>환영합니다!</h3></div>
                 <div>
-                <button className='InformationButton' 
-                        type="button" 
-                        onClick={handleInformationPageChange}>프로필 
-                        {/* 함수가 호출되어 프로필 페이지로 이동 */}
-                </button>
+                    <button className='InformationButton' 
+                            type="button" 
+                            onClick={handleInformationPageChange}>프로필 
+                            {/* 함수가 호출되어 프로필 페이지로 이동 */}
+                    </button>
                 </div>
-                <div><TabMenu tabs={['UserList', 'UserDetail']} defaultTab="UserList" /></div>
+                <div>
+                    <TabMenu tabs={['UserList', 'UserDetail']} defaultTab="UserList" />
                                    {/*  탭 메뉴의 구성 요소  */}         {/* 기본환성 탭  */}
+                </div>
             </div>
         </div>
     )

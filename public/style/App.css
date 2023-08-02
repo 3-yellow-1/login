@@ -252,7 +252,7 @@ li{
 .tab-buttons button {
   padding: 10px 20px;
   border: none;
-  background-color: transparent;
+  background-color: #f2f2f2;
   cursor: pointer;
   font-size: 16px;
   outline: none;
@@ -260,7 +260,7 @@ li{
 }
 
 .tab-buttons button.active {
-  background-color: #f2f2f2;
+  background-color: #fff;
 }
 
 .tab-content div.hidden {
