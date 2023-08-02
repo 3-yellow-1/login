@@ -15,10 +15,9 @@ const UserList = () => {
           if (jtoken) {
             axios.defaults.headers.common['Authorization'] = `Bearer ${jtoken}`;
           }
-
           axios.post('https://devawsback.gongsacok.com/admin/listUser', {
           offset: 0, // 사용자 목록의 시작 오프셋
-          size: 30, // 출력된 사용자의 개수
+          size: 20, // size of will print.
         })
 
         .then((response) => {
