@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const Headers = () => {
+export const useHeaders = () => { // 후크는 기능적 구성 요소 내에서 사용해야 하며 후크임을 나타내기 위해 이름에 'use'라는 단어로 시작해야 함.
   const [authorizationToken, setAuthorizationToken] = useState('');
 
   useEffect(() => {

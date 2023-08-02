@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Headers } from "../services/Headers";
+import { useHeaders } from "../services/useHeaders";
 
 const UserDetail = () => {
+    const authorizationToken = useHeaders();
+
     const [useId, setUseId] = useState("");
     const [name, setName] = useState("");
-    const [mobile, setMobile] = useState(""); // 사용자의 정보를 담을 상태 변수들.
-    const authorizationToken = Headers();
+    const [mobile, setMobile] = useState(""); // 사용자의 정보를 담을 상태 변수들.    
 //------------------------------------------------------------------------------
     const handleUseIdSearch = (event) => {
         setUseId(event.target.value);
