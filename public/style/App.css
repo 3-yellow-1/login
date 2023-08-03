@@ -289,26 +289,8 @@ li{
 }
 
 .userListWrap tbody td {
-  width: 20%;
   height: 36px;
   padding-bottom: 16px;
-}
-
-.userDataChangeButtonBox{
-  text-align: center;
-}
-
-.userDataChangeButton{
-  width: 50%;
-  height: 30px;
-  border: none;
-  font-weight: 700;
-  background-color: #b68dd6;
-  border-radius: 64px;
-  color: #fff;
-  margin: 0 auto;
-  cursor: pointer;
- 
 }
 
 .userDataChangeButton:disabled{
@@ -319,6 +301,8 @@ li{
 .userDatainput{
   outline: none;
   border: none;
+  text-align: center;
+  width: 100%;
 }
 
 .userDatainput:focus{
@@ -327,4 +311,33 @@ li{
   background-color: #eeeeee;
   width: 100%;
   height: 100%;
+}
+
+.userListTable{
+  width: 100%;
+}
+
+.userListTbody td{
+  width: 22%;
+}
+
+.userListButton {
+  width: 6%;
+}
+
+.userDataChangeButton{
+  width: 100%;
+  height: 30px;
+  border: none;
+  font-weight: 700;
+  background-color: #b68dd6;
+  border-radius: 64px;
+  color: #fff;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.userListTbody tr{
+  height: 50px;
+  margin: 0 auto;
 }
