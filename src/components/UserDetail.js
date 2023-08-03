@@ -59,7 +59,7 @@ const UserDetail = () => {
             mobile: mobile,
             })
             .then((response) => {
-            console.log('Data updated successfully:', response.data);
+            console.log(response.data);
             alert("사용자의 정보가 수정되었습니다.");
             setUseId('');
             setName('');

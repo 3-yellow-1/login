@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const UserList = () => {
+
   const [listItems, setListItems] = useState([]);
   // 사용자 목록을 저장하는 상태 변수
   // listItems.map()을 사용하려면 useState([]); 빈 배열로 초기화.
@@ -22,6 +23,8 @@ const UserList = () => {
 
         .then((response) => {
             setListItems(response.data.data); // 서버로부터 받은 사용자 목록 데이터를 상태 변수에 업데이트.
+            const ListItemsdata = response.data.data;
+            console.log(ListItemsdata);
         })
         .catch((error) => {
           console.log('error', error);
@@ -62,21 +65,63 @@ const UserList = () => {
     setListItems(updatedListItems);
   };
 //------------------------------------------------------------------------------
+    const [uid, setUid] = useState("");
+    // const [userid, setUserid] = useState("");
+    const [name, setName] = useState(""); 
+    const [mobile, setMobile] = useState(""); 
+
+    const handleUserDataChangeSubmit = (event, index) => { 
+      // 사용자 정보 수정 버튼 클릭 시 실행되는 함수.
+      event.preventDefault();
+      console.log('Index:', index);
+      const updatedListItems = [...listItems];
+      const itemToUpdate = updatedListItems[index];
+      itemToUpdate.uid = uid;
+      // // updatedListItems[index].userid = userid;
+      itemToUpdate.name = name;
+      itemToUpdate.mobile = mobile;
+
+      const jtoken = localStorage.getItem('jtoken');
+      if (jtoken) {
+          axios.defaults.headers.common['Authorization'] = `Bearer ${jtoken}`;
+        }
+      // 서버에 사용자 정보를 전달하여 업데이트.
+      axios.post('https://devawsback.gongsacok.com/admin/setUserDetail', {
+          ruid: itemToUpdate.uid,
+          // userid: itemToUpdate.userid,
+          name: itemToUpdate.name,
+          mobile: itemToUpdate.mobile,
+          })
+          .then((response) => {
+          console.log(response.data.data);
+          setListItems(updatedListItems);
+          alert("사용자의 정보가 수정되었습니다.");           
+          // setUserid(userid);  
+          setUid(itemToUpdate.uid);  
+          setName(itemToUpdate.name);   
+          setMobile(itemToUpdate.mobile);
+          
+          })
+          .catch((error) => {
+          console.log('Error updating data:', error);
+          });
+      };
+//------------------------------------------------------------------------------
+
   return (
     <div className='userList'>      
         <div className='userListWrap'>
-          <table>
-            <thead>
-              <tr>
-                <th>번호</th>
-                <th>아이디</th>
-                <th>이름</th>
-                <th>전화번호</th>
-                <th></th>
-              </tr>
-            </thead>
-
-            {/* <form className='DataForm' onSubmit={handleUserDataChangeSubmit}> */}
+            <form className='DataForm' onSubmit={handleUserDataChangeSubmit}>
+              <table>
+                <thead>
+                  <tr>
+                    <th>번호</th>
+                    <th>아이디</th>
+                    <th>이름</th>
+                    <th>전화번호</th>
+                    <th></th>
+                  </tr>
+                </thead>
                 <tbody>
                 {listItems.map((Items, index) => (
                     <tr key={Items.uid}>
@@ -108,15 +153,14 @@ const UserList = () => {
                                   onChange={(event) => handleUserMobileChange(event, index)}
                                   />
                       </td>
-                      <td className='userDataChangeButtonBox'>
+                      <td colSpan="5" className='userDataChangeButtonBox'>
                         <button className='userDataChangeButton' type="submit">수정</button>
                       </td>
                     </tr>                
                 ))}
                 </tbody>
-            {/* </form> */}
-            
-          </table>
+              </table>
+          </form>
         </div>      
     </div>
   );
