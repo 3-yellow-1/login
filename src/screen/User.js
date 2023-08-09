@@ -15,7 +15,7 @@ const User = () => {
     return(
         <div className="user">
             <div className="userWrap">
-                <div><h3>환영합니다!</h3></div>
+                <div><h3>환영합니다! 사용자 목록 페이지입니다.</h3></div>
                 <div>
                     <button className='InformationButton' 
                             type="button" 
